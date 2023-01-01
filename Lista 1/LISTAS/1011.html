@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esfera</title>
+</head>
+<body>
+    <h1>Volume da Esfera</h1>
+    <p>Digite aqui o valor do raio desejado.</p>
+    <input type="number" name="txtraio" id="txtraio">
+    <input type="button" value="Calcular" onclick="clicar()">
+    <div id = "res"></div>
+    <script>
+        function clicar (){
+            var txraio = document.getElementById('txtraio')
+            var res = document.getElementById('res')
+            var raio = Number(txraio.value)
+            var pi = 3.14159
+            var tvol = (4/3)*pi*raio**3
+            var vol = tvol.toFixed(3)
+            res.innerHTML = `O volume da esfera desejada é de ${vol}.`
+        }
+    </script>
+</body>
+</html>

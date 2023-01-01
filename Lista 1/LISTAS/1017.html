@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto de Combustível</title>
+</head>
+<body>
+    <h1>Gasto de Combustível</h1>
+    <div>
+        <p>Tempo: <input type="number" name="tempo" id="txtt"></p>
+        <p>Velocidade: <input type="number" name="velocidade" id="txtv"></p> 
+        <p><input type="button" value="Calcular" onclick="calcular()"></p>
+    </div>
+    <div id = "res"></div>
+    <script>
+        function calcular(){
+            var txt = document.getElementById('txtt')
+            var txv = document.getElementById('txtv')
+            var res = document.getElementById('res')
+            var tempo = Number(txt.value)
+            var vel = Number(txv.value)
+            if (tempo == 0 || vel == 0){
+                alert (`Ocorreu um ERRO, tente novamente`)
+                res.innerHTML = `Tente novamente!`
+            } else {
+                var dist = tempo*vel
+                var litros = dist/12
+                var lit = litros.toFixed(3)
+                res.innerHTML = `Você irá gastar ${lit} litros!`
+            }
+        }
+    </script>
+</body>
+</html>
